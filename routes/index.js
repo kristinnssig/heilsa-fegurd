@@ -7,10 +7,12 @@ var hof = require('../modules/apiService.js');
 var fs = require('fs');
 
 router.get('/', function(req, res){
-		res.render('index', {
+  hof.getServices(function(resp){
+    res.render('index', {
       splash: "true",
-      services: hof.getServices(true)
+      services: resp
     });
+  });
 });
 
 /*router.post('/upload', function(req, res){

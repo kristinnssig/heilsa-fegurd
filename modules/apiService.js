@@ -13,12 +13,9 @@ _.newService = function(a, b){
     console.log(a);
 };
 
-_.getServices = function(public){
-    var call;
-    Service.find({'published':public},function(err,response){
-        call = response;
-        console.log(response);
+_.getServices = function(callback){
+    Service.find({'published':true},function(err,response){
+        if(err) throw err;
+        callback(response);
     });
-    return call;
-    console.log(call);
 };
