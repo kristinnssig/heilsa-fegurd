@@ -24,12 +24,57 @@
 
   <div class="container scrollspy" id="um">
     <div class="section">
-
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
+          <h4>Um Okkur</h4>
           <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+        <div class="col s12 m6 l6">
+          <div id="map"></div>
+          <script>
+
+            function initMap() {
+              var myLatLng = {lat: 64.102656, lng: -21.879939};
+
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: myLatLng,
+                mapTypeId: 'hybrid' 
+              });
+
+              var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map
+              });
+            }
+          </script>
+        </div>
+        <div class="col s12 m6 l6">
+          <ul class="collection aboutuse z-depth-3">
+            <li class="collection-item avatar">
+              <i class="material-icons circle">spa</i>
+              <span class="title">Heilsa og Fegurð</span>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle">domain</i>
+              <span class="title">Turninum</span>
+              <p>2. hæð
+              </p>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle green">place</i>
+              <span class="title">Smáratorg 3</span>
+              <p>201 Kópavogur
+              </p>
+              <a href="https://goo.gl/maps/yup67sU6gt92" target="_blank" class="secondary-content"><i class="material-icons">directions</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle red">local_phone</i>
+              <span class="title">568-8850</span>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -52,3 +97,34 @@
       </video>
     </div>
   </div>
+
+<div class="container scrollspy" id="thjon">
+    <div class="section">
+      <div class="row">
+        {{#each services}}
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">{{title}}</span>
+                <p>{{desc}}</p>
+              </div>
+              <div class="card-action">
+                <a href="#!/boka/{{_id}}">Bóka Núna</a>
+                <a href="#modal1">Lesa Meira</a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

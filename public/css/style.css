@@ -25,12 +25,21 @@ p {
   height: auto;
 }
 
-.parallax-container.white {
+.parallax-container.whiteP {
   color: rgba(255,255,255,.9);
 }
   .parallax-container .section {
     width: 100%;
   }
+
+#map{
+  height: 438px;
+  width: 100%;
+}
+
+.aboutuse span.title{
+  font-size: 1.5em !important;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
